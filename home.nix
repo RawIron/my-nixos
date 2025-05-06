@@ -36,6 +36,32 @@
   #     xxx
   # '';
 
+  wayland = {
+    windowManager = {
+      sway = {
+        enable = true;
+        config = {
+          input = {
+            "type:touchpad" = {
+              dwt = "enabled";
+              tap = "enabled";
+              natural_scroll = "enabled";
+              middle_emulation = "enabled";
+              accel_profile = "flat";
+              pointer_accel = "1.0";
+            };
+            "type:pointer" = {
+              natural_scroll = "enabled";
+            };
+            "type:mouse" = {
+              natural_scroll = "disabled";
+            };
+          };
+        };
+      };
+    };
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # GUI APPLICATIONS
