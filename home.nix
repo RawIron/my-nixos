@@ -36,32 +36,6 @@
   #     xxx
   # '';
 
-  wayland = {
-    windowManager = {
-      sway = {
-        enable = true;
-        config = {
-          input = {
-            "type:touchpad" = {
-              dwt = "enabled";
-              tap = "enabled";
-              natural_scroll = "enabled";
-              middle_emulation = "enabled";
-              accel_profile = "flat";
-              pointer_accel = "1.0";
-            };
-            "type:pointer" = {
-              natural_scroll = "enabled";
-            };
-            "type:mouse" = {
-              natural_scroll = "disabled";
-            };
-          };
-        };
-      };
-    };
-  };
-
   home.sessionVariables = {
     # Session
     # https://github.com/swaywm/sway/wiki#xdg_current_desktop-environment-variable-is-not-being-set
@@ -81,6 +55,11 @@
     # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
     GTK_THEME= "Breeze-Dark";
   };
+
+  imports =
+    [
+      ./sway.nix
+    ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
