@@ -62,6 +62,26 @@
     };
   };
 
+  home.sessionVariables = {
+    # Session
+    # https://github.com/swaywm/sway/wiki#xdg_current_desktop-environment-variable-is-not-being-set
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_DESKTOP = "sway";
+    XDG_SESSION_TYPE = "wayland";
+
+    # Wayland
+    MOZ_ENABLE_WAYLAND = "1";
+    MOZ_USE_XINPUT2 = "1";
+    SDL_VIDEODRIVER = "wayland";
+    # https://github.com/swaywm/sway/wiki#my-favorite-application-isnt-displayed-right-how-can-i-fix-this
+    QT_QPA_PLATFORM = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+    # GTK Theme
+    # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+    GTK_THEME= "Breeze-Dark";
+  };
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # GUI APPLICATIONS
