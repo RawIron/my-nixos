@@ -35,12 +35,23 @@
   # Will be exposed through DBus to programs willing to store secrets.
   services.gnome.gnome-keyring.enable = true;
 
+  services.dbus.packages = with pkgs; [ gcr ];
+
   # enable Sway window manager
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
   };
   programs.waybar.enable = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    grim # screenshot functionality
+    slurp # screenshot functionality
+    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    mako # notification system developed by swaywm maintainer
+  ];
 
   services.greetd = {
     enable = true;
@@ -50,12 +61,6 @@
         user = "michael";
       };
     };
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
   };
 
   # Enable CUPS to print documents.
@@ -81,7 +86,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account.
+  # Don't forget to set a password with ‘passwd’.
   users.users.michael = {
     isNormalUser = true;
     description = "michael";
@@ -93,15 +99,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    grim # screenshot functionality
-    slurp # screenshot functionality
-    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-    mako # notification system developed by swaywm maintainer
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
