@@ -33,6 +33,7 @@ in {
         windowManager = {
           sway = {
 	    enable = true;
+	    checkConfig = false;  # see config.output
             config = {
               modifier = "${mod4}";
               focus = {
@@ -53,6 +54,13 @@ in {
                 };
                 "type:mouse" = {
                   natural_scroll = "disabled";
+                };
+              };
+	      output = {
+	        # this only works with checkConfig = false
+		# https://www.reddit.com/r/NixOS/comments/1c9n1qk/nixosrebuild_of_sway_failing_with_unable_to/
+	        "*" = {
+                  bg = "~/.local/share/backgrounds/2025-03-20-19-39-52-1338171.png fill";
                 };
               };
               fonts = {
