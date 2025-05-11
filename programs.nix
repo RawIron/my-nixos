@@ -6,6 +6,7 @@
     # GUI APPLICATIONS
     feh
     rofi
+    firefox
     zathura
     calibre
     rawtherapee
