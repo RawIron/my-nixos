@@ -12,7 +12,7 @@ let
   theme = import ./theme.nix {};
 
   mod4 = "Mod4";
-  opacity = "1.0";
+  opacity = "0.85";
 
   # Navigation
   left = "h";
