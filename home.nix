@@ -59,6 +59,7 @@
   imports =
     [
       ./sway.nix
+      ./rofi.nix
       ./programs.nix
     ];
 }

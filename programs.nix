@@ -5,7 +5,6 @@
   home.packages = with pkgs; [
     # GUI APPLICATIONS
     feh
-    rofi
     firefox
     zathura
     calibre
