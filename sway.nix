@@ -84,7 +84,7 @@ in {
 		  size = 8.0;
 		};
                 colors = {
-                  background = "#000000";
+                  background = "#31363B20";
                   statusline = "#ffffff";
                   separator = "#666666";
                   focusedWorkspace = {
