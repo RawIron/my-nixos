@@ -70,6 +70,50 @@ in {
               gaps = {
                 inner = 15;
               };
+              bars = [{
+                #command = "${i3bar}/bin/i3bar";
+                statusCommand = "${i3status}/bin/i3status";
+                position = "bottom";
+                mode = "dock";
+                hiddenState = "hide";
+                workspaceButtons = true;
+                workspaceNumbers = true;
+                trayOutput = "primary";
+                fonts = {
+		  names = [ "monospace" ];
+		  size = 8.0;
+		};
+                colors = {
+                  background = "#000000";
+                  statusline = "#ffffff";
+                  separator = "#666666";
+                  focusedWorkspace = {
+		    background = "#4c7899";
+		    border = "#285577";
+		    text = "#ffffff";
+		  };
+                  activeWorkspace = {
+		    background = "#333333";
+		    border = "#5f676a";
+		    text = "#ffffff";
+		  };
+                  inactiveWorkspace = {
+		    background = "#333333";
+		    border = "#222222";
+		    text = "#888888";
+		  };
+                  urgentWorkspace = {
+		    background = "#2f343a";
+		    border = "#900000";
+		    text = "#ffffff";
+		  };
+                  bindingMode = {
+		    background = "#2f343a";
+		    border = "#900000";
+		    text = "#ffffff";
+		  };
+                };
+              }];
               window = {
                 border = 3;
                 titlebar = false;
