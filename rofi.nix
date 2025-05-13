@@ -32,7 +32,10 @@ in {
             rofi-pulse-select
             rofi-systemd
           ];
-          theme = let mkLiteral = config.lib.formats.rasi.mkLiteral;
+          theme = let
+              # Use `mkLiteral` for string-like values
+              # that should show without quotes
+              mkLiteral = config.lib.formats.rasi.mkLiteral;
             in {
               "*" = {
                 bg = mkLiteral color.h_background ;
@@ -42,7 +45,8 @@ in {
               };
 
               "#window" = {
-                background-color = mkLiteral "@bg";
+                transparency = "real";
+                background-color = mkLiteral "rgba(20,20,20,0.85)";
                 location = mkLiteral "center";
                 width = mkLiteral "30%";
               };
