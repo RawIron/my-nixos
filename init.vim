@@ -41,6 +41,10 @@ let g:netrw_winsize = 15
 " file browser broot
 let g:broot_default_conf_path = expand('~/.config/broot/conf.hjson')
 
+" space characters for indentation
+set expandtab
+set tabstop=2
+set shiftwidth=2
 
 "
 " KEY MAPPINGS - leader
