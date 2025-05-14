@@ -32,15 +32,15 @@ in {
       wayland = {
         windowManager = {
           sway = {
-	    enable = true;
-	    checkConfig = false;  # see config.output
+            enable = true;
+            checkConfig = false;  # see config.output
             config = {
               modifier = "${mod4}";
               focus = {
                 forceWrapping = false;
                 followMouse = false;
               };
-	      input = {
+              input = {
                 "type:touchpad" = {
                   dwt = "enabled";
                   tap = "enabled";
@@ -56,10 +56,10 @@ in {
                   natural_scroll = "disabled";
                 };
               };
-	      output = {
-	        # this only works with checkConfig = false
-		# https://www.reddit.com/r/NixOS/comments/1c9n1qk/nixosrebuild_of_sway_failing_with_unable_to/
-	        "*" = {
+              output = {
+                # this only works with checkConfig = false
+                # https://www.reddit.com/r/NixOS/comments/1c9n1qk/nixosrebuild_of_sway_failing_with_unable_to/
+                "*" = {
                   bg = "~/.local/share/backgrounds/2025-03-20-19-39-52-1338171.png fill";
                 };
               };
@@ -80,38 +80,38 @@ in {
                 workspaceNumbers = true;
                 trayOutput = "primary";
                 fonts = {
-		  names = [ "monospace" ];
-		  size = 8.0;
-		};
+                  names = [ "monospace" ];
+                  size = 8.0;
+                };
                 colors = {
                   background = "#31363B20";
                   statusline = "#ffffff";
                   separator = "#666666";
                   focusedWorkspace = {
-		    background = "#4c7899";
-		    border = "#285577";
-		    text = "#ffffff";
-		  };
+                    background = "#4c7899";
+                    border = "#285577";
+                    text = "#ffffff";
+                  };
                   activeWorkspace = {
-		    background = "#333333";
-		    border = "#5f676a";
-		    text = "#ffffff";
-		  };
+                    background = "#333333";
+                    border = "#5f676a";
+                    text = "#ffffff";
+                  };
                   inactiveWorkspace = {
-		    background = "#333333";
-		    border = "#222222";
-		    text = "#888888";
-		  };
+                    background = "#333333";
+                    border = "#222222";
+                    text = "#888888";
+                  };
                   urgentWorkspace = {
-		    background = "#2f343a";
-		    border = "#900000";
-		    text = "#ffffff";
-		  };
+                    background = "#2f343a";
+                    border = "#900000";
+                    text = "#ffffff";
+                  };
                   bindingMode = {
-		    background = "#2f343a";
-		    border = "#900000";
-		    text = "#ffffff";
-		  };
+                    background = "#2f343a";
+                    border = "#900000";
+                    text = "#ffffff";
+                  };
                 };
               }];
               window = {
