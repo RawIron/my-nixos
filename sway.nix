@@ -175,49 +175,32 @@ in
 
   wayland.windowManager.sway = {
     config = {
+      # Custom
       keybindings = mkOptionDefault {
         # Rofi: menu
         "${mod4}+d" = "exec ${rofi}/bin/rofi -show drun";
         # Rofi: clipboard manager
-        "${mod4}+c" = "exec ${cliphist}/bin/cliphist list | ${rofi}/bin/rofi -dmenu | ${cliphist}/bin/cliphist decode | ${wl-clipboard}/bin/wl-copy";
+        "${mod4}+Ctrl+c" = "exec ${cliphist}/bin/cliphist list | ${rofi}/bin/rofi -dmenu | ${cliphist}/bin/cliphist decode | ${wl-clipboard}/bin/wl-copy";
         # Rofi: password store
-        "${mod4}+e" = "exec ${rofi-pass-wayland}/bin/rofi-pass";
+        "${mod4}+Ctrl+i" = "exec ${rofi-pass-wayland}/bin/rofi-pass";
         # Rofi: power menu
-        "${mod4}+x" = "exec ${rofi}/bin/rofi -show menu -modi 'menu:${rofi-power-menu}/bin/rofi-power-menu --no-symbols'";
+        "${mod4}+Ctrl+p" = "exec ${rofi}/bin/rofi -show menu -modi 'menu:${rofi-power-menu}/bin/rofi-power-menu --no-symbols'";
         # Rofi: filebrowser
-        "${mod4}+g" = "exec ${rofi}/bin/rofi -show filebrowser";
+        "${mod4}+Ctrl+f" = "exec ${rofi}/bin/rofi -show filebrowser";
 
         # Terminal
         "${mod4}+Return" = "exec ${kitty}/bin/kitty";
 
         # Modes
+        "${mod4}+m" = "mode audio";
         "${mod4}+r" = "mode resize";
-        "${mod4}+u" = "mode audio";
+        "${mod4}+z" = "mode size-factor-2";
+        "${mod4}+Shift+p" = "mode session";
         "Print" = "mode printscreen";
         "Shift+Print" = "mode recording";
 
         "${mod4}+Tab" = "workspace next";
         "${mod4}+Shift+Tab" = "workspace prev";
-
-        "${mod4}+1" = "workspace number 1";
-        "${mod4}+2" = "workspace number 2";
-        "${mod4}+3" = "workspace number 3";
-        "${mod4}+4" = "workspace number 4";
-        "${mod4}+5" = "workspace number 5";
-        "${mod4}+6" = "workspace number 6";
-        "${mod4}+7" = "workspace number 7";
-        "${mod4}+8" = "workspace number 8";
-        "${mod4}+9" = "workspace number 9";
-
-        "${mod4}+${left}" = "focus left";
-        "${mod4}+${right}" = "focus right";
-        "${mod4}+${down}" = "focus down";
-        "${mod4}+${up}" = "focus up";
-
-        "${mod4}+Shift+${left}" = "move left";
-        "${mod4}+Shift+${right}" = "move right";
-        "${mod4}+Shift+${down}" = "move down";
-        "${mod4}+Shift+${up}" = "move up";
       };
     };
   };
@@ -269,32 +252,42 @@ in
     config = {
       modes = {
         audio = {
-          # Audio = "launch: [i]input [o]output";
-          Escape = "mode default";
-          Return = "mode default";
+          # Audio
+          # [i]nput [o]utput
           "i" = "exec ${rofi-pulse-select}/bin/rofi-pulse-select source, mode default";
           "o" = "exec ${rofi-pulse-select}/bin/rofi-pulse-select sink, mode default";
-        };
-        resize = {
           Escape = "mode default";
           Return = "mode default";
+        };
+        resize = {
+          "${down}" = "resize grow height 10 px or 10 ppt";
+          "${left}" = "resize shrink width 10 px or 10 ppt";
+          "${right}" = "resize grow width 10 px or 10 ppt";
+          "${up}" = "resize shrink height 10 px or 10 ppt";
+          Escape = "mode default";
+          Return = "mode default";
+        };
+        size-factor-2 = {
           "${down}" = "resize grow height 5 px or 5 ppt";
           "${left}" = "resize shrink width 5 px or 5 ppt";
           "${right}" = "resize grow width 5 px or 5 ppt";
           "${up}" = "resize shrink height 5 px or 5 ppt";
-        };
-        session = {
-          # Session = launch:
-          # [h]ibernate [p]oweroff [r]eboot
-          # [s]uspend [l]ockscreen log[o]ut
           Escape = "mode default";
           Return = "mode default";
+        };
+        session = {
+          # Session
+          # [p]oweroff [r]eboot
+          # [h]ibernate [s]uspend
+          # [l]ockscreen log[o]ut
           "h" = "exec ${systemd}/bin/systemctl hibernate, mode default";
           "p" = "exec ${systemd}/bin/systemctl poweroff, mode default";
           "r" = "exec ${systemd}/bin/systemctl reboot, mode default";
           "s" = "exec ${systemd}/bin/systemctl suspend, mode default";
           "l" = "exec ${swaylock}/bin/swaylock, mode default";
           "o" = "exec ${sway}/bin/swaymsg exit, mode default";
+          Escape = "mode default";
+          Return = "mode default";
         };
       };
     };
