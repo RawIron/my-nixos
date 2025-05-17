@@ -270,8 +270,8 @@ filextype {.blend}
         \ blender %c,
 
 filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+        \ feh --geometry 640x480 --image-bg black --scale-down %f &,
         \ sxiv %f &,
-        \ feh --scale-down %f,
         \ gpicview %c,
         \ shotwell,
 
