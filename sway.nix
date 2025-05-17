@@ -128,18 +128,29 @@ in
         border = 3;
         titlebar = false;
         commands = [
+        # the following syntax is not supported:
+        # criteria = [ { app_id = "feh"; } { app_id = "imv"; } ];
         {
           command = "opacity ${opacity}, border pixel 3, inhibit_idle fullscreen";
-          criteria = {
-            class = ".*";
-          };
+          criteria = { class = ".*"; };
         }
         {
           command = "opacity ${opacity}, border pixel 3, inhibit_idle fullscreen";
-          criteria = {
-            app_id = ".*";
-          };
-        }];
+          criteria = { app_id = ".*"; };
+        }
+        {
+          command = "opacity 1.00, border pixel 3, inhibit_idle fullscreen";
+          criteria = { app_id = "mpv"; };
+        }
+        {
+          command = "opacity 1.00, border pixel 3, inhibit_idle fullscreen";
+          criteria = { class = "feh"; };
+        }
+        {
+          command = "opacity 1.00, border pixel 3, inhibit_idle fullscreen";
+          criteria = { app_id = "imv"; };
+        }
+        ];
       };
       assigns = {
         "1" = [ # Terminal
@@ -166,6 +177,7 @@ in
           { app_id = "mpv"; }
           { app_id = "qt5ct"; }
           { app_id = "qt6ct"; }
+          { class = "feh"; }
           { class = "Zotero"; }
           { instance = "lxappearance"; }
         ];
@@ -194,7 +206,6 @@ in
         # Modes
         "${mod4}+m" = "mode audio";
         "${mod4}+r" = "mode resize";
-        "${mod4}+z" = "mode size-factor-2";
         "${mod4}+Shift+p" = "mode session";
         "Print" = "mode printscreen";
         "Shift+Print" = "mode recording";
@@ -264,14 +275,6 @@ in
           "${left}" = "resize shrink width 10 px or 10 ppt";
           "${right}" = "resize grow width 10 px or 10 ppt";
           "${up}" = "resize shrink height 10 px or 10 ppt";
-          Escape = "mode default";
-          Return = "mode default";
-        };
-        size-factor-2 = {
-          "${down}" = "resize grow height 5 px or 5 ppt";
-          "${left}" = "resize shrink width 5 px or 5 ppt";
-          "${right}" = "resize grow width 5 px or 5 ppt";
-          "${up}" = "resize shrink height 5 px or 5 ppt";
           Escape = "mode default";
           Return = "mode default";
         };
