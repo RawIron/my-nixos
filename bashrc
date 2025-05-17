@@ -17,7 +17,7 @@ export VISUAL='nvim'
 export VIMCONFIG=~/.config/nvim
 export VIMDATA=~/.local/share/nvim
 
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+export FZF_DEFAULT_OPTS="--preview 'bat --plain --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
 # Set up fzf shell integration, key bindings and fuzzy completion
 [[ $(type -P "fzf") ]] && eval "$(fzf --bash)"
