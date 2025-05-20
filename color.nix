@@ -1,6 +1,6 @@
 { ... }: let
+  opacity = 0.85;
 
-  # Colors without hastag
   primary = "${bright_blue}";
   r_primary = "${r_bright_blue}";
 
@@ -8,6 +8,7 @@
   f_primary = "#${primary}FF";
   q_primary = "'#${primary}'";
 
+  # Colors without hastag
   black = "26292D";
   red = "ED1515";
   green = "11D116";
@@ -108,6 +109,7 @@
   r_foreground = "rgba(239, 240, 241, 1.00)";
   r_cursorColor = "rgba(239, 240, 241, 1.00)";
   r_selectionBackground = "rgba(239, 240, 241, 1.00)";
+  r_transparentBackground = "rgba(49, 54, 59, ${toString opacity})";
 
 in {
 
@@ -213,5 +215,6 @@ in {
   inherit r_foreground;
   inherit r_cursorColor;
   inherit r_selectionBackground;
+  inherit r_transparentBackground;
 
 }

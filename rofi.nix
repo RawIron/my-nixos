@@ -7,11 +7,10 @@ with pkgs;
 with config;
 
 let
-
   color = import ./color.nix {};
   theme = import ./theme.nix {};
-
-in {
+in
+{
   programs = {
     rofi = {
       enable = true;
@@ -46,7 +45,7 @@ in {
 
         "#window" = {
           transparency = "real";
-          background-color = mkLiteral "rgba(20,20,20,0.85)";
+          background-color = mkLiteral color.r_transparentBackground;
           location = mkLiteral "center";
           width = mkLiteral "30%";
         };
