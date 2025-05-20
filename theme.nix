@@ -14,6 +14,7 @@
   font-emoji = "Twitter Color Emoji";
   font-size = 10;
   font-size-alt = 14;
+  font-size-small = 8;
 
 in {
 
@@ -31,4 +32,5 @@ in {
   inherit font-emoji;
   inherit font-size;
   inherit font-size-alt;
+  inherit font-size-small;
 }

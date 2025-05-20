@@ -1,5 +1,7 @@
-{ ... }: let
-  opacity = 0.85;
+{ ... }:
+let
+  opacity = "0.85";
+  opacity_in_hex = "20";
 
   primary = "${bright_blue}";
   r_primary = "${r_bright_blue}";
@@ -47,6 +49,7 @@
   h_bright_white = "#${bright_white}";
   h_background = "#${background}";
   h_foreground = "#${foreground}";
+  h_transparentBackground = "#${background}${opacity_in_hex}";
 
   # Colors with hastag & alpha
   f_black = "#${black}FF";
@@ -107,11 +110,14 @@
   r_bright_white = "rgba(252, 252, 252, 1.00)";
   r_background = "rgba(49, 54, 59, 1.00)";
   r_foreground = "rgba(239, 240, 241, 1.00)";
+
   r_cursorColor = "rgba(239, 240, 241, 1.00)";
   r_selectionBackground = "rgba(239, 240, 241, 1.00)";
-  r_transparentBackground = "rgba(49, 54, 59, ${toString opacity})";
+  r_transparentBackground = "rgba(49, 54, 59, ${opacity})";
 
 in {
+
+  inherit opacity;
 
   inherit primary;
   inherit h_primary;
@@ -156,6 +162,7 @@ in {
   inherit h_bright_white;
   inherit h_background;
   inherit h_foreground;
+  inherit h_transparentBackground;
 
   inherit f_black;
   inherit f_red;
@@ -213,6 +220,7 @@ in {
   inherit r_bright_white;
   inherit r_background;
   inherit r_foreground;
+
   inherit r_cursorColor;
   inherit r_selectionBackground;
   inherit r_transparentBackground;
