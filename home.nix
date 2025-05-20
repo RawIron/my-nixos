@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  theme = import ./theme.nix {};
+in
 {
   # This value determines the home Manager release that your
   # configuration is compatible with.
@@ -53,13 +56,12 @@
 
     # GTK Theme
     # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
-    GTK_THEME= "Breeze-Dark";
+    GTK_THEME = "${theme.theme}";
   };
 
-  imports =
-    [
-      ./sway.nix
-      ./rofi.nix
-      ./programs.nix
-    ];
+  imports = [
+    ./sway.nix
+    ./rofi.nix
+    ./programs.nix
+  ];
 }
