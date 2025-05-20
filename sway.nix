@@ -7,8 +7,8 @@ with lib;
 with pkgs;
 
 let
-  mod4 = "Mod4";
-  opacity = "0.85";
+  mod = "Mod4";
+  wallpaper = "~/.local/share/backgrounds/current.png";
 
   # Navigation
   left = "h";
@@ -18,6 +18,8 @@ let
 
   color = import ./color.nix {};
   theme = import ./theme.nix {};
+
+  opacity = color.opacity;
 
   window_bg_color = color.h_background;
   view_bg_color = color.h_bright_black;
@@ -35,7 +37,7 @@ in
 
   wayland.windowManager.sway = {
     config = {
-      modifier = "${mod4}";
+      modifier = "${mod}";
       focus = {
         forceWrapping = false;
         followMouse = false;
@@ -60,11 +62,11 @@ in
         # this only works with checkConfig = false
         # https://www.reddit.com/r/NixOS/comments/1c9n1qk/nixosrebuild_of_sway_failing_with_unable_to/
         "*" = {
-          bg = "~/.local/share/backgrounds/2025-03-20-19-39-52-1338171.png fill";
+          bg = "${wallpaper} fill";
         };
       };
       fonts = {
-        names = ["${theme.font}"];
+        names = [ "${theme.font}" ];
         size = toString theme.font-size;
       };
       gaps = {
@@ -85,37 +87,37 @@ in
         workspaceNumbers = true;
         trayOutput = "primary";
         fonts = {
-          names = [ "monospace" ];
-          size = 8.0;
+          names = [ "${theme.font-mono}" ];
+          size = toString theme.font-size-small;
         };
         colors = {
-          background = "#31363b20";
-          statusline = "#ffffff";
-          separator = "#666666";
+          background = "${color.h_transparentBackground}";
+          statusline = "${color.h_foreground}";
+          separator = "${color.h_bright_black}";
           focusedWorkspace = {
-            background = "#4c7899";
-            border = "#285577";
-            text = "#ffffff";
+            background = "${color.h_bright_blue}";
+            border = "${color.h_blue}";
+            text = "${color.h_bright_black}";
           };
           activeWorkspace = {
-            background = "#333333";
-            border = "#5f676a";
-            text = "#ffffff";
+            background = "${color.h_background}";
+            border = "${color.h_bright_black}";
+            text = "${color.h_bright_green}";
           };
           inactiveWorkspace = {
-            background = "#333333";
-            border = "#222222";
-            text = "#888888";
+            background = "${color.h_background}";
+            border = "${color.h_bright_black}";
+            text = "${color.h_bright_black}";
           };
           urgentWorkspace = {
-            background = "#2f343a";
-            border = "#900000";
-            text = "#ffffff";
+            background = "${color.h_background}";
+            border = "${color.h_red}";
+            text = "${color.h_red}";
           };
           bindingMode = {
-            background = "#2f343a";
-            border = "#900000";
-            text = "#ffffff";
+            background = "${color.h_background}";
+            border = "${color.h_red}";
+            text = "${color.h_white}";
           };
         };
       }];
@@ -160,15 +162,18 @@ in
         "2" = [ # Browser
           { app_id = "firefox"; }
         ];
-        "3" = [ # Communicating
+        "3" = [ # Communication
           { class = "signal.*"; }
         ];
         "4" = [ # Editor
           { app_id = "vscode"; }
         ];
+        "5" = [ # System Monitor
+          { app_id = "htop"; }
+        ];
       };
       floating = {
-        modifier = "${mod4}";
+        modifier = "${mod}";
         border = 3;
         titlebar = false;
         criteria = [
@@ -190,28 +195,28 @@ in
       # Custom
       keybindings = mkOptionDefault {
         # Rofi: menu
-        "${mod4}+d" = "exec ${rofi}/bin/rofi -show drun";
+        "${mod}+d" = "exec ${rofi}/bin/rofi -show drun";
         # Rofi: clipboard manager
-        "${mod4}+Ctrl+c" = "exec ${cliphist}/bin/cliphist list | ${rofi}/bin/rofi -dmenu | ${cliphist}/bin/cliphist decode | ${wl-clipboard}/bin/wl-copy";
+        "${mod}+Ctrl+c" = "exec ${cliphist}/bin/cliphist list | ${rofi}/bin/rofi -dmenu | ${cliphist}/bin/cliphist decode | ${wl-clipboard}/bin/wl-copy";
         # Rofi: password store
-        "${mod4}+Ctrl+i" = "exec ${rofi-pass-wayland}/bin/rofi-pass";
+        "${mod}+Ctrl+i" = "exec ${rofi-pass-wayland}/bin/rofi-pass";
         # Rofi: power menu
-        "${mod4}+Ctrl+p" = "exec ${rofi}/bin/rofi -show menu -modi 'menu:${rofi-power-menu}/bin/rofi-power-menu --no-symbols'";
+        "${mod}+Ctrl+p" = "exec ${rofi}/bin/rofi -show menu -modi 'menu:${rofi-power-menu}/bin/rofi-power-menu --no-symbols'";
         # Rofi: filebrowser
-        "${mod4}+Ctrl+f" = "exec ${rofi}/bin/rofi -show filebrowser";
+        "${mod}+Ctrl+f" = "exec ${rofi}/bin/rofi -show filebrowser";
 
         # Terminal
-        "${mod4}+Return" = "exec ${kitty}/bin/kitty";
+        "${mod}+Return" = "exec ${foot}/bin/foot";
 
         # Modes
-        "${mod4}+m" = "mode audio";
-        "${mod4}+r" = "mode resize";
-        "${mod4}+Shift+p" = "mode session";
+        "${mod}+m" = "mode audio";
+        "${mod}+r" = "mode resize";
+        "${mod}+Shift+p" = "mode session";
         "Print" = "mode printscreen";
         "Shift+Print" = "mode recording";
 
-        "${mod4}+Tab" = "workspace next";
-        "${mod4}+Shift+Tab" = "workspace prev";
+        "${mod}+Tab" = "workspace next";
+        "${mod}+Shift+Tab" = "workspace prev";
       };
     };
   };
