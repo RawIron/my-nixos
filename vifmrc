@@ -105,7 +105,7 @@ endif
 set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " List of color schemes to try (picks the first one supported by the terminal)
-colorscheme Default-256 Default
+colorscheme onedark Default Default-256
 
 " ------------------------------------------------------------------------------
 " Bookmarks
@@ -571,6 +571,5 @@ endif
 " ------------------------------------------------------------------------------
 " Icon decorations example
 " ------------------------------------------------------------------------------
-
 " https://github.com/cirala/vifm_devicons
-source ~/.config/vifm/vifm_devicons/favicons.vifm
+" source ~/.config/vifm/vifm_devicons/favicons.vifm

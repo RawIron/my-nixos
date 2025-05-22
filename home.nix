@@ -25,6 +25,7 @@ in
   home.file.".config/tmux/tmux.conf".source = ./tmux.conf;
   home.file.".config/nvim/init.vim".source = ./init.vim;
   home.file.".config/vifm/vifmrc".source = ./vifmrc;
+  home.file.".config/vifm/colors/onedark.vifm".source = ./onedark.vifm;
   home.file.".config/vifm/scripts/ffprobe_jq.sh".source = ./ffprobe_jq.sh;
 
   # link all files in `./scripts` to `~/.config/i3/scripts`
