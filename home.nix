@@ -61,6 +61,7 @@ in
 
   imports = [
     ./sway.nix
+    ./i3status.nix
     ./rofi.nix
     ./programs.nix
   ];

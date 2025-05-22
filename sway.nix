@@ -92,16 +92,16 @@ in
         };
         colors = {
           background = "${color.h_transparentBackground}";
-          statusline = "${color.h_foreground}";
+          statusline = "${color.h_bright_green}";
           separator = "${color.h_bright_black}";
           focusedWorkspace = {
-            background = "${color.h_bright_blue}";
+            background = "${color.h_background}";
             border = "${color.h_blue}";
-            text = "${color.h_bright_black}";
+            text = "${color.h_blue}";
           };
           activeWorkspace = {
             background = "${color.h_background}";
-            border = "${color.h_bright_black}";
+            border = "${color.h_bright_green}";
             text = "${color.h_bright_green}";
           };
           inactiveWorkspace = {
