@@ -13,7 +13,6 @@
     protonvpn-gui
 
     # TTY
-    tmux
     st
     rxvt-unicode-unwrapped
 

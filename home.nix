@@ -22,7 +22,6 @@ in
   home.file.".bashrc".source = ./bashrc;
   home.file.".bash_aliases".source = ./bash_aliases;
   home.file.".bash_aliases_git".source = ./bash_aliases_git;
-  home.file.".config/tmux/tmux.conf".source = ./tmux.conf;
   home.file.".config/nvim/init.vim".source = ./init.vim;
   home.file.".config/vifm/vifmrc".source = ./vifmrc;
   home.file.".config/vifm/colors/onedark.vifm".source = ./onedark.vifm;
@@ -64,6 +63,7 @@ in
     ./sway.nix
     ./i3status.nix
     ./rofi.nix
+    ./tmux.nix
     ./programs.nix
   ];
 }
