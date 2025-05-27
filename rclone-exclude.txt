@@ -1,0 +1,9 @@
+rclone-exclude.txt
+.git/**
+LICENSE
+README.md
+shell.nix
+flake.lock
+show_color.sh
+diff_nixos.sh
+deploy_nixos.sh
