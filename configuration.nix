@@ -31,6 +31,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Enable the gnome-keyring secrets vault.
   # Will be exposed through DBus to programs willing to store secrets.
   services.gnome.gnome-keyring.enable = true;
@@ -66,6 +68,8 @@
     ];
   };
 
+  programs.zsh.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -99,6 +103,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "michael";
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
@@ -119,6 +124,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
+  # networking.firewall.enable = true;
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
