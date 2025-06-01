@@ -1,3 +1,30 @@
+# Sway on NixOS
+
+### app launcher
+
+### file browser
+
+### mount usb
+
+### partition disk, format drive
+
+### disk usage
+
+### network connections
+
+### vpn
+
+### power savings
+
+### wallpaper
+
+### shutdown, restart, hibernate
+
+### screen lock, logout
+
+### audio volume, screen brightness, media control
+
+
 ## Install NixOS
 
 Download most recent NixOS release.
