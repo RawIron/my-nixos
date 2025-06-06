@@ -57,6 +57,9 @@ in
     # GTK Theme
     # https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
     GTK_THEME = "${theme.theme}";
+
+    # Java AWT applications
+    _JAVA_AWT_WM_NONREPARENTING=1;
   };
 
   imports = [
