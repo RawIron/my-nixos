@@ -2,6 +2,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+colorscheme sorbet
+" colorscheme slate
+" colorscheme zaibatsu
+" colorscheme desert
+" colorscheme unokai
 
 " Syntax Highlighting
 syntax on

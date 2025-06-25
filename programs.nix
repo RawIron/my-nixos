@@ -35,22 +35,25 @@
     encfs
     universal-ctags
     cloc
-    scc
-    ltrace # library call monitoring
-    fzf # A command-line fuzzy finder
-    fd
-    ripgrep # recursively searches directories for a regex pattern
+    scc       # accurate code counter with complexity calculations
+    plantuml  # UML diagrams as code
+    ltrace    # library call monitoring
+    strace    # system call monitoring
+    fzf       # command-line fuzzy finder
+    fd        # simple alternative to 'find'
+    ripgrep   # recursively searches directories for a regex pattern
     bat
     broot
     tree
-    eza # A modern replacement for ls
-    lsof # list open files
+    eza     # a modern replacement for ls
+    lsof    # list open files
     ncdu
     dust
-    jq # A lightweight and flexible command-line JSON processor
+    jq    # a lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
     tealdeer
     fastfetch
+    hyperfine   # command-line benchmarking tool
     nmon
     htop
     atop
