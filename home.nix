@@ -65,6 +65,7 @@ in
   imports = [
     ./sway.nix
     ./i3status.nix
+    ./batsignal.nix
     ./rofi.nix
     ./zsh.nix
     ./tmux.nix

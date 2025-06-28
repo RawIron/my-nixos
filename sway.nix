@@ -72,9 +72,6 @@ in
       gaps = {
         inner = 15;
       };
-      startup = [
-        { command = '' batsignal -b -w 25 -c 20 -W "Low Battery Capacity" -C "Critical Battery Capacity" ''; }
-      ];
     };
   };
 
