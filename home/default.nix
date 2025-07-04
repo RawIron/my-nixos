@@ -24,9 +24,6 @@ in
 
   # link the configuration file in current directory
   # to the specified location in home directory
-  home.file.".bashrc".source = ./bashrc;
-  home.file.".bash_aliases".source = ./bash_aliases;
-  home.file.".bash_aliases_git".source = ./bash_aliases_git;
   home.file.".config/nvim/init.vim".source = ./init.vim;
   home.file.".config/vifm/vifmrc".source = ./vifmrc;
   home.file.".config/vifm/colors/onedark.vifm".source = ./onedark.vifm;
