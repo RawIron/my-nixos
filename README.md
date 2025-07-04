@@ -1,8 +1,20 @@
 # Sway on NixOS
 
+### login screen
+* greetd
+
 ### app launcher
+* rofi
+
+### status bar
+* i3status
+
+### notifications
+* mako
+* batsignal
 
 ### file browser
+* vifm
 
 ### mount usb
 
@@ -11,18 +23,23 @@
 ### disk usage
 
 ### network connections
+* nmcli
 
 ### vpn
 
 ### power savings
 
 ### wallpaper
+* bg
 
 ### shutdown, restart, hibernate
+* rofi
 
 ### screen lock, logout
 
-### audio volume, screen brightness, media control
+### screen brightness
+
+### audio volume, media control
 
 
 ## Install NixOS

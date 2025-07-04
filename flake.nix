@@ -30,7 +30,7 @@
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
 
-            home-manager.users.michael = import ./home/home.nix;
+            home-manager.users.michael = import ./home;
 
             # Optionally pass arguments to home.nix
             # home-manager.extraSpecialArgs = ''

@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./zsh.nix
+    ./tmux.nix
+  ];
+
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # GUI APPLICATIONS

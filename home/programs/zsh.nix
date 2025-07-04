@@ -8,8 +8,8 @@ with pkgs;
 with config;
 
 let
-  color = import ./color.nix {};
-  theme = import ./theme.nix {};
+  color = import ../color.nix {};
+  theme = import ../theme.nix {};
 in
 {
   programs.zsh = {

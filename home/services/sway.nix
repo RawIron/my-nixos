@@ -16,8 +16,8 @@ let
   up = "k";
   right = "l";
 
-  color = import ./color.nix {};
-  theme = import ./theme.nix {};
+  color = import ../color.nix {};
+  theme = import ../theme.nix {};
 
   opacity = color.opacity;
 

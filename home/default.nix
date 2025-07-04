@@ -4,6 +4,11 @@ let
   theme = import ./theme.nix {};
 in
 {
+  imports = [
+    ./services
+    ./programs
+  ];
+
   # This value determines the home Manager release that your
   # configuration is compatible with.
   # You can update home Manager without changing this value. See
@@ -61,14 +66,4 @@ in
     # Java AWT applications
     _JAVA_AWT_WM_NONREPARENTING=1;
   };
-
-  imports = [
-    ./sway.nix
-    ./i3status.nix
-    ./batsignal.nix
-    ./rofi.nix
-    ./zsh.nix
-    ./tmux.nix
-    ./programs.nix
-  ];
 }
