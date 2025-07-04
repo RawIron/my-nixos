@@ -3,6 +3,8 @@
 {
   imports = [
     ./bash
+    ./nvim
+    ./vifm
     ./zsh.nix
     ./tmux.nix
   ];
