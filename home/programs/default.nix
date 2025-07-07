@@ -25,12 +25,10 @@
     rxvt-unicode-unwrapped
 
     # COMMAND LINE TOOLS
-    neovim
     rclone
     git
     tig
     diff-so-fancy
-    vifm
     poppler_utils
     lynx
     chafa
