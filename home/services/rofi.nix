@@ -25,6 +25,7 @@ in
           "run"
         ];
         show-icons = false;
+        terminal = "foot";
       };
       plugins = [
         rofi-file-browser
