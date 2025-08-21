@@ -23,22 +23,41 @@ in
         interval = 5;
       };
       modules = {
-        "wireless _first_" = {
+        "ipv6" = {
+          position = 0;
+        };
+        "path_exists VPN" = {
           position = 1;
+          settings = {
+            # a VPN tunnel launched by proton is active
+            path = "/proc/sys/net/ipv4/conf/proton0";
+            format = "%title";
+            format_down = "";
+          };
+        };
+        "wireless _first_" = {
+          position = 2;
           settings = {
             format_up = "W: %quality %essid";
             format_down = "W: down";
           };
         };
-        "load" = {
+        "ethernet _first_" = {
           position = 3;
+          settings = {
+            format_up = "E: %speed";
+            format_down = "E: down";
+          };
+        };
+        "load" = {
+          position = 4;
           settings = {
             format = "L: %1min";
             max_threshold = 5;
           };
         };
         "battery all" = {
-          position = 4;
+          position = 5;
           settings = {
             format = "%status %percentage";
             threshold_type = "percentage";
@@ -46,7 +65,7 @@ in
           };
         };
         "disk /" = {
-          position = 5;
+          position = 6;
           settings = {
             format = "/ %avail";
             threshold_type = "gbytes_avail";
@@ -54,12 +73,18 @@ in
           };
         };
         "memory" = {
-          position = 6;
+          position = 7;
           settings = {
             format = "M: %used";
             format_degraded = "M< %available";
             threshold_degraded = "2G";
             threshold_critical = "1G";
+          };
+        };
+        "tztime local" = {
+          position = 8;
+          settings = {
+            format = "%Y-%m-%d %H:%M:%S";
           };
         };
       };
