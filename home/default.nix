@@ -28,6 +28,7 @@ in
   #   recursive = true;   # link recursively
   #   executable = true;  # make all files executable
   # };
+  home.file."shell.nix".source = ./shell.nix;
 
   # encode the file content in nix configuration file directly
   # home.file.".xxx".text = ''
