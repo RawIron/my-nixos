@@ -24,6 +24,14 @@
     st
     rxvt-unicode-unwrapped
 
+    # DEVELOPMENT
+    gcc
+    gdb
+    gnumake
+
+    zulu  # cerfified builds of OpenJDK
+    python3Minimal
+
     # COMMAND LINE TOOLS
     rclone
     git
