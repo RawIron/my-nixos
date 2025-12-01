@@ -28,6 +28,8 @@
     gcc
     gdb
     gnumake
+    lib-clang
+    include-what-you-use
 
     zulu  # cerfified builds of OpenJDK
     python3Minimal
