@@ -15,7 +15,7 @@ in
     rofi = {
       enable = true;
       font = "${theme.font} ${toString theme.font-size}";
-      package = rofi-wayland;
+      package = rofi;
       extraConfig = {
         case-sensitive = false;
         display-drun = "Apps:";

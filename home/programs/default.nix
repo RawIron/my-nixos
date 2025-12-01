@@ -28,7 +28,7 @@
     gcc
     gdb
     gnumake
-    lib-clang
+    #clang
     include-what-you-use
 
     zulu  # cerfified builds of OpenJDK
@@ -39,7 +39,7 @@
     git
     tig
     diff-so-fancy
-    poppler_utils
+    poppler-utils
     lynx
     chafa
     timg
