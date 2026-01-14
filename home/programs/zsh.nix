@@ -24,18 +24,41 @@ in
       VISUAL = "nvim";
       VIMCONFIG = "~/.config/nvim";
       VIMDATA = "~/.local/share/nvim";
-      MANPAGER = "less -R --use-color -Dd+r -Du+b";
-      MANROFFOPT = "-P -c";
+      # use oh-my-zsh plugin colored-man-pages instead
+      #MANPAGER = "less -R --use-color -Dd+r -Du+b";
+      #MANROFFOPT = "-P -c";
     };
     initContent = lib.mkOrder 1000 ''
 # group - no write
 # other - no read, no write, no execute
 umask 0027
 
+
 export FZF_DEFAULT_OPTS="--preview 'bat --plain --color=always {}'"
-export FZF_DEFAULT_COMMAND="fd --type f"
+
+# fzf, use fd instead of find (fd reads .config/fd/ignore)
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+
+# ctrl-t command
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+
+# alt-c command
+export FZF_ALT_C_COMMAND='fd --type d --hidden'
+
+# "**" command syntax
+_fzf_compgen_path() {
+  fd --hidden --follow . "$1"
+}
+
+# "**" command syntax (for directories only)
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow . "$1"
+}
+
 # Set up fzf shell integration, key bindings and fuzzy completion
 [[ $(command -v "fzf") ]] && eval "$(fzf --zsh)"
+
 
 BROOT_LAUNCHER="~/.config/broot/launcher/zsh/br"
 if [ -f "$BROOT_LAUNCHER" ]; then
@@ -47,7 +70,7 @@ fi
   programs.zsh = {
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "vi-mode" "sudo" ];
+      plugins = [ "git" "vi-mode" "colored-man-pages" "sudo" ];
       theme = "robbyrussell";
     };
   };
