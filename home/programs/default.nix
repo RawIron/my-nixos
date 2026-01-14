@@ -7,6 +7,7 @@
     ./vifm
     ./zsh.nix
     ./tmux.nix
+    ./fd.nix
   ];
 
   # Packages that should be installed to the user profile.
@@ -56,7 +57,6 @@
     ltrace    # library call monitoring
     strace    # system call monitoring
     fzf       # command-line fuzzy finder
-    fd        # simple alternative to 'find'
     ripgrep   # recursively searches directories for a regex pattern
     bat
     broot
