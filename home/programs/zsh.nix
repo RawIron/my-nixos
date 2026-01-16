@@ -34,9 +34,27 @@ in
 umask 0027
 
 
+# create a full‑width thin line
+fullwidth_line() {
+  # line character & colour
+  local char='\u2500'                # ─
+  local color='\e[38;5;240m'         # grey (256‑color)
+  local reset='\e[0m'
+  local cols=$COLUMNS
+  printf "$color$char%.0s$reset" {1..$cols}
+}
+
+# print the line before every prompt
+precmd() {
+  print $(fullwidth_line)
+}
+
+
+# fzf
+
 export FZF_DEFAULT_OPTS="--preview 'bat --plain --color=always {}'"
 
-# fzf, use fd instead of find (fd reads .config/fd/ignore)
+# use fd instead of find (fd reads .config/fd/ignore)
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
