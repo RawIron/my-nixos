@@ -32,7 +32,21 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
+    package = null; # use the system package swayfx
+                    # see nixos/configuration.nix
     checkConfig = false;  # see config.output
+  };
+
+  wayland.windowManager.sway = {
+    # swayfx configuration
+    extraConfig = ''
+    blur enable
+    blur_radius 2
+    blur_noise 0.0
+    blur_brightness 1.2
+    blur_contrast 1.0
+    corner_radius 4
+    '';
   };
 
   wayland.windowManager.sway = {

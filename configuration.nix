@@ -51,6 +51,7 @@
   # Enable Sway window manager
   programs.sway = {
     enable = true;
+    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       # Packages used in default config
@@ -76,7 +77,7 @@
   ];
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   # sound.enable = true;
@@ -90,8 +91,9 @@
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
+    # use the example session manager
+    # no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now
     #media-session.enable = true;
   };
 
