@@ -11,20 +11,24 @@ pkgs.mkShellNoCC {
     rxvt-unicode-unwrapped
     tig
     diff-so-fancy
+    lazygit
+    yazi
     timg
     glow
     ffmpegthumbnailer
     epub-thumbnailer
     universal-ctags
     cloc
+    tokei
     scc
-    eza
+    eza     # replacement for ls
+    zoxide  # cd with ranking algorithm to navigate frequently used directories
     dust
     tealdeer
     atop
     btop
-    iotop
     bottom
+    iotop
   ];
 
 }
