@@ -8,27 +8,16 @@ pkgs.mkShellNoCC {
     helix
     zellij
     joshuto
-    rxvt-unicode-unwrapped
-    tig
-    diff-so-fancy
     lazygit
-    yazi
-    timg
-    glow
-    ffmpegthumbnailer
-    epub-thumbnailer
-    universal-ctags
-    cloc
-    tokei
-    scc
+    yazi  # terminal file manager
+    tokei   # count lines of source code
+            # color‑coded output, supports ignore
     eza     # replacement for ls
     zoxide  # cd with ranking algorithm to navigate frequently used directories
-    dust
-    tealdeer
-    atop
-    btop
-    bottom
-    iotop
+    xxd   # hexdump from a binary file, or vice-versa
+    file
+    btop    # system and process monitor
+    bottom  # system and process monitor
   ];
 
 }
