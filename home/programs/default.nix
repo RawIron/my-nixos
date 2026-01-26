@@ -24,6 +24,7 @@
     # TTY
     st
     rxvt-unicode-unwrapped
+    alacritty
 
     # DEVELOPMENT
     gcc
@@ -51,7 +52,7 @@
     epub-thumbnailer
     encfs
     universal-ctags
-    cloc
+    cloc      # code counter
     scc       # accurate code counter with complexity calculations
     plantuml  # UML diagrams as code
     ltrace    # library call monitoring
@@ -70,7 +71,7 @@
     tealdeer
     fastfetch
     hyperfine   # command-line benchmarking tool
-    nmon
+    nmon    # system and process monitor
     htop
     atop
     iotop # io monitoring

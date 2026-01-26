@@ -169,21 +169,35 @@ in
         ];
       };
       assigns = {
+        # use following command to query sway:
+        # jq -c   one object per line
+        #    -C   force colored output
+        /*
+          swaymsg -t get_tree \
+            | jq -c -C '.. | select(.type?) \
+              | {type: .type, id: .id, name: .name, app_id: .app_id, \
+                 class: .window_properties?.class, \
+                 instance: .window_properties?.instance}' \
+            | grep firefox
+         */
         "1" = [ # Terminal
           { app_id = "foot"; }
-          { app_id = "st"; }
         ];
         "2" = [ # Browser
           { app_id = "firefox"; }
         ];
-        "3" = [ # Communication
-          { class = "signal.*"; }
+        "3" = [ # Terminal
+          { class = "st-256color"; }
+          { app_id = "Alacritty"; }
         ];
-        "4" = [ # Editor
-          { app_id = "vscode"; }
+        "4" = [ # Communication
+          { app_id = "calibre"; }
         ];
-        "5" = [ # System Monitor
-          { app_id = "htop"; }
+        "5" = [ # Communication
+          { app_id = "signal"; }
+        ];
+        "6" = [ # VPN
+          { app_id = ".protonvpn-app-wrapped"; }
         ];
       };
       floating = {
