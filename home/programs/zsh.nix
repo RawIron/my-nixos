@@ -51,10 +51,10 @@ precmd() {
 
 
 # fzf
+# use fd instead of find (fd reads .config/fd/ignore)
 
 export FZF_DEFAULT_OPTS="--preview 'bat --plain --color=always {}'"
-
-# use fd instead of find (fd reads .config/fd/ignore)
+export FZF_CTRL_R_OPTS="--no-preview --border"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 
