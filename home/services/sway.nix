@@ -187,10 +187,10 @@ in
           { app_id = "firefox"; }
         ];
         "3" = [ # Terminal
-          { class = "st-256color"; }
           { app_id = "Alacritty"; }
+          { class = "st-256color"; }
         ];
-        "4" = [ # Communication
+        "4" = [ # Books
           { app_id = "calibre"; }
         ];
         "5" = [ # Communication
