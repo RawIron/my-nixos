@@ -6,3 +6,4 @@ flake.lock
 show_color.sh
 diff_nixos.sh
 deploy_nixos.sh
+nix_which.sh
