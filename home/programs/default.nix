@@ -8,6 +8,7 @@
     ./zsh.nix
     ./tmux.nix
     ./fd.nix
+    ./bat.nix
   ];
 
   # Packages that should be installed to the user profile.
@@ -59,7 +60,6 @@
     strace    # system call monitoring
     fzf       # command-line fuzzy finder
     ripgrep   # recursively searches directories for a regex pattern
-    bat
     broot
     tree
     eza     # a modern replacement for ls
