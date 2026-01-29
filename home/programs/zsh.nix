@@ -51,18 +51,8 @@ precmd() {
 
 
 # fzf
-# use fd instead of find (fd reads .config/fd/ignore)
-
-export FZF_DEFAULT_OPTS="--preview 'bat --plain --color=always {}'"
-export FZF_CTRL_R_OPTS="--no-preview --border"
-
-export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-
-# ctrl-t command
-export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-
-# alt-c command
-export FZF_ALT_C_COMMAND='fd --type d --hidden'
+# for now these configs have to be here
+# see fzf.nix
 
 # "**" command syntax
 _fzf_compgen_path() {
@@ -73,9 +63,6 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow . "$1"
 }
-
-# Set up fzf shell integration, key bindings and fuzzy completion
-[[ $(command -v "fzf") ]] && eval "$(fzf --zsh)"
 
 
 BROOT_LAUNCHER="~/.config/broot/launcher/zsh/br"

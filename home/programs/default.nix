@@ -6,6 +6,7 @@
     ./nvim
     ./vifm
     ./zsh.nix
+    ./fzf.nix
     ./tmux.nix
     ./fd.nix
     ./bat.nix
@@ -58,7 +59,6 @@
     plantuml  # UML diagrams as code
     ltrace    # library call monitoring
     strace    # system call monitoring
-    fzf       # command-line fuzzy finder
     ripgrep   # recursively searches directories for a regex pattern
     broot
     tree
